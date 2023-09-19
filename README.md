@@ -2,16 +2,6 @@
 
 Проект Kittygram реализует сервис для публикации фото котиков, описание их достижений с возможностью редактирования и просмотра другими пользователями.
 
-## Используемые технологии
-
-- Python
-- Django
-- Django REST framework
-- Node.js
-- Docker
-- PostgreSQL
-- Nginx
-
 ## Запуск приложения в Ubuntu/Debian Linux
 
 Установка и запуск приложения на сервер возможна в двух вариантах. Из исходных кодов на Github вручную и c использованием CI/CD GitHub Actions
@@ -71,6 +61,38 @@ location / {
 8. Перезапустить Nginx:
 
 ```
-sudo service nginx reload
+$ sudo service nginx reload
 ```
 После этого приложение будет доступно по IP адресу сервера либо localhost
+
+### C использованием CI/CD GitHub Actions на удаленный сервер
+
+1. Форкните в свой аккаунт GitHub репозиторий git@github.com:SpeedeGonzales/kittygram_final.git
+
+2. Добавте secrets в  GitHub Actions форкутого репозитария:
+
+```
+    DOCKER_USERNAME                # имя пользователя в DockerHub
+    DOCKER_PASSWORD                # пароль пользователя в DockerHub
+    HOST                           # IP-адрес сервера
+    USER                           # имя пользователя
+    SSH_KEY                        # содержимое приватного SSH-ключа
+    SSH_PASSPHRASE                 # пароль для SSH-ключа
+
+    TELEGRAM_TO                    # ID вашего телеграм-аккаунта
+    TELEGRAM_TOKEN                 # токен вашего бота
+```
+3. Сборка и деплой на сервер проект происходит при каждом новом коммите, после команды git push
+
+## Используемые технологии
+
+- Python
+- Django
+- Django REST framework
+- Node.js
+- Docker
+- PostgreSQL
+- Nginx
+
+## Создатель проекта:
+* [SpeedeGonzales]([https://github.com/SpeedeGonzales])
