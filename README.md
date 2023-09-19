@@ -54,7 +54,23 @@ $ sudo docker compose up -d
 
 6. Выполнить следующие команды:
 ```
-sudo docker compose exec backend python manage.py migrate
-sudo docker compose exec backend python manage.py collectstatic
-sudo docker compose exec backend cp -r /app/collected_static/. /backend_static/static/
+$ sudo docker compose exec backend python manage.py migrate
+$ sudo docker compose exec backend python manage.py collectstatic
+$ sudo docker compose exec backend cp -r /app/collected_static/. /backend_static/static/
 ```
+
+7. Установить согласно документации Nginx. В конфигурационном файле `/etc/nginx/sites-enabled/default` в секции `server` изменить настройки `location`:
+
+```
+location / {
+    proxy_set_header Host $http_host;
+    proxy_pass http://127.0.0.1:9000;
+}
+```
+
+8. Перезапустить Nginx:
+
+```
+sudo service nginx reload
+```
+После этого приложение будет доступно по IP адресу сервера либо localhost
