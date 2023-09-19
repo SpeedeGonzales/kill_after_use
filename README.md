@@ -70,9 +70,3 @@ sudo docker compose -f docker-compose.yml down
 ```
 
 ## Об авторе <a id=7></a>
-
-Киреев Александр Олегович  
-Python-разработчик (Backend)  
-E-mail: kireev20000@yandex.ru
-
-Telegram: @kireev20000
