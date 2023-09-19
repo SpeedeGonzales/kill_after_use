@@ -94,5 +94,5 @@ $ sudo service nginx reload
 - PostgreSQL
 - Nginx
 
-## Создатель проекта:
-* [SpeedeGonzales]([https://github.com/SpeedeGonzales])
+## Автор проекта:
+[SpeedeGonzales](https://github.com/SpeedeGonzales)
