@@ -21,12 +21,12 @@
 1. Клонировать репозиторий:
 
 ```bash 
-git clone git@github.com:SpeedeGonzales/kittygram_final.git
+# git clone git@github.com:SpeedeGonzales/kittygram_final.git
 ```
 2. В корневом каталоге проекта из файла `.env.example` создать файл `.env`, при необходимости заменив значения переменных.
 
 ```bash 
-cp .env.example .env
+# cp .env.example .env
 ```
 
 Выполняем запуск:
