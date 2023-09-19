@@ -43,5 +43,18 @@ $ sudo apt update
 $ sudo apt install curl
 $ curl -fsSL https://get.docker.com -o get-docker.sh
 $ sudo sh get-docker.sh
-$ sudo apt install docker-compose
+$ sudo apt install docker-compose-plugin
+```
+
+5. Запустить в каталоге `kittygram` Docker Compose в режиме демона:
+```
+$ sudo docker compose up -d
+```
+В результате соберутся и запустятся необходимые контейнеры.
+
+6. Выполнить следующие команды:
+```
+sudo docker compose exec backend python manage.py migrate
+sudo docker compose exec backend python manage.py collectstatic
+sudo docker compose exec backend cp -r /app/collected_static/. /backend_static/static/
 ```
