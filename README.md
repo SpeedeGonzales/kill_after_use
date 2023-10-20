@@ -59,13 +59,13 @@ $ sudo docker compose up -d
 ```
 $ sudo docker compose exec backend python manage.py migrate
 $ sudo docker compose exec backend python manage.py collectstatic --noinput
-sudo docker compose exec backend mv /static/rest_framework /static/static/
-sudo docker compose exec backend mv /static/admin /static/static/
+$ sudo docker compose exec backend mv /static/rest_framework /static/static/
+$ sudo docker compose exec backend mv /static/admin /static/static/
 ```
 
 7. Создайте администратора базы данных
 ```
-sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
+$  sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
 ```
 
 8. Установить согласно документации Nginx. В конфигурационном файле `/etc/nginx/sites-enabled/default` в секции `server` изменить настройки `location`:
@@ -101,7 +101,7 @@ $ sudo service nginx reload
     TELEGRAM_TO                    # ID вашего телеграм-аккаунта
     TELEGRAM_TOKEN                 # токен вашего бота
 ```
-3. Сборка и деплой на сервер проект происходит при каждом новом коммите, после команды git push
+3. Сборка и деплой проекта на сервер происходит при каждом новом коммите, после команды git push
 
 
 ## Адрес проекта:
