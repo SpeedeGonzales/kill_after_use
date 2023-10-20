@@ -63,7 +63,12 @@ sudo docker compose exec backend mv /static/rest_framework /static/static/
 sudo docker compose exec backend mv /static/admin /static/static/
 ```
 
-7. Установить согласно документации Nginx. В конфигурационном файле `/etc/nginx/sites-enabled/default` в секции `server` изменить настройки `location`:
+7. Создайте администратора базы данных
+```
+sudo docker compose -f docker-compose.production.yml exec backend python manage.py createsuperuser
+```
+
+8. Установить согласно документации Nginx. В конфигурационном файле `/etc/nginx/sites-enabled/default` в секции `server` изменить настройки `location`:
 
 ```
 location / {
@@ -72,7 +77,7 @@ location / {
 }
 ```
 
-8. Перезапустить Nginx:
+9. Перезапустить Nginx:
 
 ```
 $ sudo service nginx reload
