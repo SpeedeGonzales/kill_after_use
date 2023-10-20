@@ -108,6 +108,7 @@ $ sudo service nginx reload
 https://foodgram.akbsib.ru/
 
 admin login: root@root.ru
+
 admin pass: Gfhjkmroot
 
 ## Автор проекта:
